@@ -1,4 +1,4 @@
-package br.com.cleonildojunior;
+package br.com.cleonildojunior.messaging;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
