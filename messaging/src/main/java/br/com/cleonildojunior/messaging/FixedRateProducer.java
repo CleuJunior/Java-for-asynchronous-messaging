@@ -19,8 +19,8 @@ public class FixedRateProducer {
 
     @Scheduled(fixedRate = 500)
     public void sendMessage() {
-        i++;
-        LOGGER.info("i is {}", i);
-        this.template.convertAndSend("hello.rmq", "Fixed rate " + i);
+//        i++;
+//        LOGGER.info("i is {}", i);
+        this.template.convertAndSend("fixedrate", "Fixed rate " + i);
     }
 }
