@@ -46,6 +46,33 @@
 			<artifactId>spring-rabbit-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Jackson Core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.12.2</version>
+		</dependency>
+
+		<!-- Jackson Databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.12.2</version>
+		</dependency>
+
+		<!-- Jackson Annotations -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.12.2</version>
+		</dependency>
+
+		<!-- Jackson JSR-310 (Java Time) Module -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.12.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
