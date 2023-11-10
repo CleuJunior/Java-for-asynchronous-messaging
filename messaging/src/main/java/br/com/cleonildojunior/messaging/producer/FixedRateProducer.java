@@ -1,4 +1,4 @@
-package br.com.cleonildojunior.messaging;
+package br.com.cleonildojunior.messaging.producer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package br.com.cleonildojunior.messaging;
+package br.com.cleonildojunior.messaging.producer;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
