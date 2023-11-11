@@ -1,6 +1,8 @@
 package br.com.cleonildojunior.messaging;
 
+import br.com.cleonildojunior.messaging.entity.Furniture;
 import br.com.cleonildojunior.messaging.entity.Picture;
+import br.com.cleonildojunior.messaging.producer.FurnitureProducer;
 import br.com.cleonildojunior.messaging.producer.HumanResourceProducer;
 import br.com.cleonildojunior.messaging.producer.PictureProducer;
 import br.com.cleonildojunior.messaging.producer.PictureProducer2;
@@ -30,11 +32,16 @@ public class MessagingApplication implements CommandLineRunner {
 //
 //	@Autowired
 //	PictureProducer producer;
+//	@Autowired
+//	PictureProducer2 producer;
+//
 	@Autowired
-	PictureProducer2 producer;
+	FurnitureProducer producer;
 
-	private final List<String> SOURCE = List.of("mobile", "web");
-	private final List<String> TYPE = List.of("jpg", "png", "svg");
+//	private final List<String> SOURCE = List.of("mobile", "web");
+//	private final List<String> TYPE = List.of("jpg", "png", "svg");
+	private final List<String> COLORS = List.of("white", "red", "green");
+	private final List<String> MATERIALS = List.of("wood", "plastic", "steel");
 
 	public static void main(String[] args) {
 		SpringApplication.run(MessagingApplication.class, args);
@@ -51,13 +58,13 @@ public class MessagingApplication implements CommandLineRunner {
 //		this.producer.sendMessage(new Employee("3", "Agatha Guimaraes", LocalDate.now()));
 
 
-		for (int i = 1; i < 11; i++) {
+		for (int i = 1; i < 21; i++) {
 			producer.sendMessage(
-					new Picture(
-							"Selfie ID " + i,
-							TYPE.get(new Random().nextInt(0, 3)),
-							SOURCE.get(new Random().nextInt(0, 2)),
-							new Random().nextInt(1_000, 5_001)
+					new Furniture(
+							COLORS.get(new Random().nextInt(0, 3)),
+							MATERIALS.get(new Random().nextInt(0, 2)),
+							"Furniture N: " + i,
+							new Random().nextInt(95, 3_000)
 					)
 			);
 		}
