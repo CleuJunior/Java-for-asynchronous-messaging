@@ -3,6 +3,7 @@ package br.com.cleonildojunior.messaging;
 import br.com.cleonildojunior.messaging.entity.Picture;
 import br.com.cleonildojunior.messaging.producer.HumanResourceProducer;
 import br.com.cleonildojunior.messaging.producer.PictureProducer;
+import br.com.cleonildojunior.messaging.producer.PictureProducer2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,9 +27,11 @@ public class MessagingApplication implements CommandLineRunner {
 
 //	@Autowired
 //	EmployeeJsonProducer producer;
-
+//
+//	@Autowired
+//	PictureProducer producer;
 	@Autowired
-	PictureProducer producer;
+	PictureProducer2 producer;
 
 	private final List<String> SOURCE = List.of("mobile", "web");
 	private final List<String> TYPE = List.of("jpg", "png", "svg");
@@ -54,7 +57,7 @@ public class MessagingApplication implements CommandLineRunner {
 							"Selfie ID " + i,
 							TYPE.get(new Random().nextInt(0, 3)),
 							SOURCE.get(new Random().nextInt(0, 2)),
-							10_000
+							new Random().nextInt(1_000, 5_001)
 					)
 			);
 		}
